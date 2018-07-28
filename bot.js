@@ -34,12 +34,12 @@ client.login(process.env.BOT_TOKEN);
 let points = JSON.parse(fs.readFileSync('points.json', 'utf8'));
 client.on('message', message => {
     if (!points[message.author.id]) points[message.author.id] = {points : 0}
-    if (message.content == '.نقاطي'){
+    if (message.content == 'نقاطي'){
         var embed = new Discord.RichEmbed()
         .setAuthor(message.author.username,message.author.avatarURL)
         .addField(`نقاطك : ${points[message.author.id].points}`,'By : Tariq',   true)
         .setColor('RANDOM')
-        .setFooter('SAFARI GAMES', client.user.avatarURL);
+        .setFooter('ET| Games', client.user.avatarURL);
         message.channel.sendEmbed(embed)
     };
     if (message.content == ".فكك") {    
